@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Talent_Manager_Queue_Offer</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Talent Manager Queue</label>
+    <queue>Talent_Manager_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

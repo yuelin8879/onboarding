@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Get_Approval_From_HR_Manager</fullName>
+        <description>Get Approval From HR Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>HR_Manager</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approve_Offer</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_HR_Advisor</fullName>
+        <description>Notify HR Advisor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>HR_Advisor__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Offer_Approval_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Offer_For_Talent_Manager_Approval</fullName>
+        <description>Send Offer For Talent Manager Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Talent_Manager</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approve_Offer</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>To_Draft</fullName>
+        <field>Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>To Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>To_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>To Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>To_Presented</fullName>
+        <field>Status__c</field>
+        <literalValue>Presented</literalValue>
+        <name>To Presented</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>
